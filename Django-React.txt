@@ -1,0 +1,14 @@
+1. create project folder notes
+2. create virtualenv
+3. Install django, {generate requirements.txt}
+4. create project notes_project
+5. create app notes
+6. create model Note(title, content, created_at, updated_at,)
+7. Register model in admin
+8. install djangorestframework, django-cors-headers {update requirements.txt}
+9. Update installed apps, cors headers in the middleware and add cors whitelist in settings.py
+10. Create serializer file and create Note serializer
+11. create Note listview(queryset, serializer) in views.py
+12. create Note detailview(queryset, serializer) in views.py
+13. create urls.py and register paths to list and detail views
+14. update project urls and add note urls
