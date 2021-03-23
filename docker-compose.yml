@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+  web:
+    build: .
+    environment:
+      - DJANGO_DEBUG
+      - SECRET_KEY
+      - DJANGO_ALLOWED_HOSTS

@@ -5,4 +5,4 @@
 __pycache__/
 
 # data and databases
-booktime/db.sqlite3
+notes_project/db.sqlite3
