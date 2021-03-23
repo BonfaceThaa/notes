@@ -25,7 +25,7 @@ SECRET_KEY = '_tkdi5^_iy0mw%11m8)x9owf+*n6tp3&1x0x9vm-&!zf_tko+%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework'
 ]
+
+CORS_ORIGIN_WHITELIST = (
+    '0.0.0.0:30000',
+)
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
