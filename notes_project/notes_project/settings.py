@@ -43,9 +43,9 @@ INSTALLED_APPS = [
     'channels',
 ]
 
-CORS_ORIGIN_WHITELIST = (
-    'htttp://0.0.0.0:30000',
-)
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3001',
+]
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',

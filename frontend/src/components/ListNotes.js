@@ -2,11 +2,14 @@ import React from 'react';
 
 import { ListGroup, ListGroupItem } from "reactstrap";
 
+import Note from './Note';
+
 const ListNotes = ({ notes, handlerItemClick }) => {
     let notes_list = notes.map((note) => {
         return (
             <ListGroupItem key={note.id} href="#" onClick={(id) => handlerItemClick(note.id)}>
-                <p>{note.title}</p>
+                <Note title={note.title}>
+                </Note>
             </ListGroupItem>
         )
     })
