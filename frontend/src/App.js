@@ -3,8 +3,8 @@ import React, {Component} from 'react';
 import {Button, Container, Row, Col} from 'reactstrap';
 
 import ListNotes from './components/ListNotes';
-
-import { fetchNotes, fetchNote } from './api'
+import AddNoteForm from "./components/AddNoteForm";
+import {fetchNotes, fetchNote, addNote} from './api'
 
 var notes_temp = [
     {
@@ -37,6 +37,7 @@ class App extends Component {
         this.handlerItemCLick = this.handlerItemCLick.bind(this);
         this.handleAddNote = this.handleAddNote.bind(this);
         this.getData = this.getData.bind(this);
+        this.handleSaveNote = this.handleSaveNote.bind(this);
     }
 
     componentDidMount() {
@@ -60,6 +61,12 @@ class App extends Component {
         })
 
     }
+
+    async handleSaveNote (data) {
+        await addNote(data);
+        await this.getData();
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -77,10 +84,9 @@ class App extends Component {
                                 <ListNotes notes={this.state.notes} handlerItemClick={(id) => this.handlerItemCLick(id)} />
                         </Col>
                         <Col xs="8">
-                            <p>Edit notes here</p>
                             {
                                 this.state.is_creating ?
-                                    "Creating now.....":
+                                    <AddNoteForm handleSave={this.handleSaveNote}/> :
                                     `Edit note with id: ${this.state.current_note_id}`
                             }
                         </Col>
