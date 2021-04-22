@@ -1,4 +1,4 @@
-const url = "http://localhost:8000/api/v1/notes/";
+const url = "q";
 
 export const fetchNotes = async () => {
     return fetch(url, {})

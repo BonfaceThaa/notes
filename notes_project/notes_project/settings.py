@@ -44,7 +44,7 @@ INSTALLED_APPS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3001',
+    'http://localhost:3000',
 ]
 
 MIDDLEWARE = [
@@ -134,7 +134,7 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            'HOSTS': [{'127.0.0.1', 6379}]
+            'hosts': [('127.0.0.1', 6379)]
         },
     },
 }
